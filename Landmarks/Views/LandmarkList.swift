@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 17.0, *)
 struct LandmarkList: View {
     @Environment(ModelData.self) var modelData
     @State private var showFavoritesOnly = false
@@ -42,9 +41,6 @@ struct LandmarkList: View {
 }
 
 #Preview {
-        let landmarks = ModelData().landmarks
-        return Group {
-            LandmarkRow(landmark: landmarks[0])
-            LandmarkRow(landmark: landmarks[1])
-        }
+    LandmarkList()
+        .environment(ModelData())
 }
